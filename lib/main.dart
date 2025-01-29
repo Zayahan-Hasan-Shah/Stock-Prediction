@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'viewmodels/stock_viewmodel.dart';
-import 'views/stock_prediction_screen.dart';
+import 'package:stock_algo_comparison/views/best_algo/best_algo_prediction.dart';
+import 'package:stock_algo_comparison/views/descision_tree_and_actual_data/decision_tree_and_actual_data.dart';
+import 'package:stock_algo_comparison/views/linear_and_actual_data/linear_and_actual_data.dart';
+import 'package:stock_algo_comparison/views/lstm_and_actual_data/lstm_and_actual_data.dart';
+import 'viewmodels/stock_prediction_viewmodel/stock_viewmodel.dart';
+import 'views/stock_prediction_page/stock_prediction_screen.dart';
 
 void main() {
   runApp(
@@ -21,23 +25,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/stockprediction',
+      routes: {
+        '/stockprediction': (context) => StockPredictionScreen(),
+        '/bestalgo': (context) => BestAlgoPredictionScreen(),
+        '/lstm': (context) => const LstmAndActualData(),
+        '/linearregression': (context) =>  LinearAndActualData(),
+        '/decisiontree': (context) => const  DecisionTreeAndActualData(),
+      },
       title: 'Flutter Demo',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // TRY THIS: Try running your application with "flutter run". You'll see
-        // the application has a purple toolbar. Then, without quitting the app,
-        // try changing the seedColor in the colorScheme below to Colors.green
-        // and then invoke "hot reload" (save your changes or press the "hot
-        // reload" button in a Flutter-supported IDE, or press "r" if you used
-        // the command line to start the app).
-        //
-        // Notice that the counter didn't reset back to zero; the application
-        // state is not lost during the reload. To reset the state, use hot
-        // restart instead.
-        //
-        // This works for code too, not just values: Most code changes can be
-        // tested with just a hot reload.
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),

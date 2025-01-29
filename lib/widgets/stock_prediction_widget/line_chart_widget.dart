@@ -354,13 +354,17 @@ class LineChartWidget extends StatelessWidget {
         // Legend (below the chart)
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Row(
+          child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               LegendItem(color: Colors.blue, label: "Actual"),
+              const SizedBox(height: 4,),
               LegendItem(color: Colors.green, label: "Linear Regression"),
+              const SizedBox(height: 4,),
               LegendItem(color: Colors.orange, label: "Decision Tree"),
+              const SizedBox(height: 4,),
               LegendItem(color: Colors.red, label: "LSTM"),
+              const SizedBox(height: 4,),
             ],
           ),
         ),

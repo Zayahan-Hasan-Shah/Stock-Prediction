@@ -26,8 +26,8 @@
 // }
 
 import 'package:flutter/material.dart';
-import '../models/stock_data_model.dart';
-import '../services/prediction_service.dart';
+import '../../models/stock_data_model.dart';
+import '../../services/prediction_service.dart';
 
 class StockViewModel with ChangeNotifier {
   final PredictionService _predictionService = PredictionService();
